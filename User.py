@@ -12,4 +12,6 @@ class User:
 
     def edit_position(self, ticker : str, change : int):
         self.positions[ticker].num_shares += change
-        
+
+    def remove_position(self, ticker : str):
+        del self.positions[ticker]
