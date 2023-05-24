@@ -5,7 +5,8 @@ class Stock:
     priceHistory = {}
     "priceHistory is a hashSet with Keys: time and date, and values: price at that key"
     "TODO: add sharesBought, shares Sold"
-    def __init__(self, name, ticker, price, sector, stock_type, divs, fees, time):
+    def __init__(self, name, ticker, price, shares,
+                 sector, stock_type, divs, fees, time):
         self.name = name
         self.ticker = ticker
         self.price = price
@@ -15,8 +16,8 @@ class Stock:
         self.bought = 0
         self.sold = 0
         self.unique_inter = set()
-        self.shares = 0
-        self.available_shares
+        self.shares = shares
+        self.available_shares = shares
         self.divs = divs
         self.fees = fees
 
