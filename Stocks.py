@@ -31,28 +31,19 @@ class Stock:
     TODO implement custom exception type for buying error to catch in other methods.
     """
 
-    def sell(self, user : User.User):
-        self.sold += 1
-        self.available_shares += 1
-        self.unique_inter.add(user)
-
-    def sellShares(self, user : User.User, num_shares : int):
+    def sell(self, user : User.User, num_shares : int):
         self.sold += num_shares
         self.available_shares += num_shares
-        self.unique_inter.add(user)
+        self.unique_iden.add(user)
 
-    def buy(self, user : User.User):
-        if self.available_shares > 0:
-            self.bought += 1
-            self.available_shares -= 1
-            self.unique_inter.add(user)
-        else:
-            raise Exception("No shares available")
-
-    def buyShares(self, user : User.User, num_shares : int):
+    def buy(self, user : User.User, num_shares : int):
         if self.available_shares >= num_shares:
             self.bought += num_shares
             self.available_shares -= num_shares
-            self.unique_inter.add(user)
+            self.unique_iden.add(user)
         else:
             raise Exception("Not enough shares available")
+        
+    def updateShares(self, totalShares):
+        self.shares = totalShares
+        self.available_shares = totalShares
