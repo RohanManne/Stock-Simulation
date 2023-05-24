@@ -35,13 +35,13 @@ class Stock:
     def sell(self, user : User.User, num_shares : int):
         self.sold += num_shares
         self.available_shares += num_shares
-        self.unique_iden.add(user)
+        self.unique_inter.add(user)
 
     def buy(self, user : User.User, num_shares : int):
         if self.available_shares >= num_shares:
             self.bought += num_shares
             self.available_shares -= num_shares
-            self.unique_iden.add(user)
+            self.unique_inter.add(user)
         else:
             raise Exception("Not enough shares available")
         
