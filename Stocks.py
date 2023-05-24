@@ -44,7 +44,3 @@ class Stock:
             self.unique_inter.add(user)
         else:
             raise Exception("Not enough shares available")
-        
-    def updateShares(self, totalShares):
-        self.shares = totalShares
-        self.available_shares = totalShares
