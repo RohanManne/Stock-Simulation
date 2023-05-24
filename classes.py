@@ -13,7 +13,7 @@ class User:
         self.positions = dict()
         self.net = self.cash
 
-    def add_position(self, position: Position.Position):
+    def add_position(self, position: Position):
         self.positions[position.ticker] = position
 
     def edit_position(self, ticker : str, change : int):
@@ -58,12 +58,12 @@ class Stock:
     TODO implement custom exception type for buying error to catch in other methods.
     """
 
-    def sell(self, user : User.User, num_shares : int):
+    def sell(self, user : User, num_shares : int):
         self.sold += num_shares
         self.available_shares += num_shares
         self.unique_inter.add(user)
 
-    def buy(self, user : User.User, num_shares : int):
+    def buy(self, user : User, num_shares : int):
         if self.available_shares >= num_shares:
             self.bought += num_shares
             self.available_shares -= num_shares

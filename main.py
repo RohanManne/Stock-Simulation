@@ -3,9 +3,6 @@ import random, time
 
 stocks = []
 
-"""
-algorithm
-"""
 def demand_rand(s : Stock):
     threshold = s.shares / 20
     ratio = s.bought / s.sold
@@ -40,5 +37,3 @@ def tick():
         stock.updatePrice(newprice, ctime)
         
         # day and long-term have different bounds as they have a greater effect, mitigating overall stock collapse due to 'bad rng'.
-
-    # UserManager.updateAll()
