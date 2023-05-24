@@ -25,4 +25,7 @@ class Stock:
         price = newPrice
         time = newTime
     
+    def addShares(self, amountShare):
+        self.shares -= amountShare
+    
     
