@@ -5,3 +5,4 @@ class Position:
         self.initial_price = initial_price
         self.num_shares = num_shares
         self.ticker = ticker
+        self.__stock_ref

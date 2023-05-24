@@ -15,3 +15,7 @@ class User:
 
     def remove_position(self, ticker : str):
         del self.positions[ticker]
+
+    def update_positions(self):
+        for (ticker, position) in self.positions:
+            pass
