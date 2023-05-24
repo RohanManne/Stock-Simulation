@@ -1,4 +1,4 @@
-import Stocks, User, random
+import Stocks, User, random, time
 
 """
 dont have a concrete ds for manager of stocks, users, etc.
@@ -19,6 +19,7 @@ def demand_rand(s : Stocks.Stock):
 def tick():
     # every tick
     c = [0.015, 0.025, 0.03, 0.075]
+    ctime = time.time()
 
     for stock in StockManager.Iter():
 
@@ -30,11 +31,13 @@ def tick():
         """
 
         
-        stock.price *= 1 + \
+        newprice = stock.price + \
             c[0] * random.randint(-99, 100) + \
                 c[1] * demand_rand() + \
                     c[2] * random.randint(-20, 35) + \
                         c[3] * random.randint(-30, 45)
+        
+        stock.updatePrice(newprice, ctime)
         
         # day and long-term have different bounds as they have a greater effect, mitigating overall stock collapse due to 'bad rng'.
 
