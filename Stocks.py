@@ -18,7 +18,7 @@ class Stock:
         self.fees = fees
 
     def getInfo(self):
-        return [self.name][self.ticker][self.price]
+        return [self.name, self.ticker, self.price]
 
     def UpdatePrice(self, newTime, newPrice):
         self.priceHistory.update({newTime:newPrice})
