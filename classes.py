@@ -1,4 +1,30 @@
-import User
+
+class Position:
+    def __init__(self, initial_price, num_shares, ticker):
+        self.initial_price = initial_price
+        self.num_shares = num_shares
+        self.ticker = ticker
+        self.__stock_ref
+    
+class User:
+    def __init__(self, name):
+        self.name = name
+        self.cash = 1000
+        self.positions = dict()
+        self.net = self.cash
+
+    def add_position(self, position: Position.Position):
+        self.positions[position.ticker] = position
+
+    def edit_position(self, ticker : str, change : int):
+        self.positions[ticker].num_shares += change
+
+    def remove_position(self, ticker : str):
+        del self.positions[ticker]
+
+    def update_positions(self):
+        for (ticker, position) in self.positions:
+            pass
 
 class Stock:
     

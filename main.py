@@ -1,12 +1,12 @@
-import Stocks, User, random, time
+from classes import *
+import random, time
+
+stocks = []
 
 """
-dont have a concrete ds for manager of stocks, users, etc.
-
-using stand-ins for it for now
+algorithm
 """
-
-def demand_rand(s : Stocks.Stock):
+def demand_rand(s : Stock):
     threshold = s.shares / 20
     ratio = s.bought / s.sold
     rand = random.randint(-99, 100)
@@ -21,7 +21,7 @@ def tick():
     c = [0.015, 0.025, 0.03, 0.075]
     ctime = time.time()
 
-    for stock in StockManager.Iter():
+    for stock in stocks:
 
         """
         formula:
